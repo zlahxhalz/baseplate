@@ -1,9 +1,0 @@
----
-layout: default
-modal-id: 3
-title: SQL Joins
-img: circus.png
-alt: image-alt
-project-url: https://drive.google.com/file/d/1m8r_6lPUo5Rh4faWL53n-IkLVrPhdcsp/view?usp=sharing
-description: Implemented various JOIN commands (inner, left, right, self, and cross) in MySQL, utilizing UNION and UNION ALL to efficiently combine and query data from multiple tables.
----

@@ -54,7 +54,7 @@ location:
 
 # Credits content
 credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.
-<a href="https://www.flaticon.com/free-icons/cyber-attack" title="cyber attack icons">Cyber icons created by Freepik - Flaticon</a>'
+Cyber icons created by <a href="https://www.flaticon.com/free-icons/cyber-attack" title="cyber attack icons">Freepik - Flaticon</a>.'
 
 # Build settings
 markdown: kramdown
