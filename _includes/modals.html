@@ -15,13 +15,13 @@
           <div class="modal-body">
             <h2>{{ post.title }}</h2>
             <hr class="star-primary">
-            <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
+            <img src="img/portfolio/{{ post.img }}" class="portfolio-image" alt="{{ post.alt }}">
             {% if post.description %}
             <p>{{ post.description }}</p>
             {% endif %}
             {% if post.project-url != null %}
-              <a href="{{ post.project-url }}" class="btn btn-lg btn-default">
-                Visit Project
+              <a href="{{ post.project-url }}" class="btn btn-lg btn-default modal-view-button">
+                View Project
               </a>
             {% endif %}
             <ul class="list-inline item-details">

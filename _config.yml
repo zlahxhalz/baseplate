@@ -25,10 +25,10 @@ disqus_shortname:
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: 18bc9c #80B3FF
-  primary-rgb: "24,288,156" #"128,179,255"
-  secondary: 2c3e50 #FD6E8A
-  secondary-dark: 233140 #A2122F
+  primary: 2dd7b9 #80B3FF
+  primary-rgb: "45,215,185" #"128,179,255"
+  secondary: 48597a #FD6E8A
+  secondary-dark: 001846 #A2122F
 
 # Footer settings
 footer:
@@ -41,12 +41,14 @@ footer:
 social:
   - title: twitter
     url: https://twitter.com/MeritAmerica
-  - title: email
-    url: mailto:bgilbert@meritamerica.org
   - title: linkedin
     url: https://www.linkedin.com/in/beau-gilbert93/
   - title: github
     url: https://github.com/coachbeau
+
+# Email Address (make sure to include "mailto:" before your email!)
+email:
+  email-url: 
 
 # Postal address (add as many lines as necessary)
 location:
