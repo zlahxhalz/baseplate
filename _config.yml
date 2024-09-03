@@ -32,15 +32,13 @@ color:
 
 # Footer settings
 footer:
-  copyright: Dr. Henry Jekyll
+  copyright: Beau Gilbert
   location: Location
   social: Around the Web
   credits: Credits
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: twitter
-    url: https://twitter.com/MeritAmerica
   - title: linkedin
     url: https://www.linkedin.com/in/beau-gilbert93/
   - title: github
@@ -48,7 +46,7 @@ social:
 
 # Email Address (make sure to include "mailto:" before your email!)
 email:
-  email-url: 
+  email-url: mailto:bgilbert@meritamerica.org
 
 # Postal address (add as many lines as necessary)
 location:
