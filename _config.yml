@@ -1,7 +1,7 @@
 # Site settings
 title: Jeremiah Shalz
 email: jeremiah.shalz25@gmail.com
-url: https://outofluckspeedrun-r.github.io/Baseplate
+url: https://zlahxhalz.github.io/baseplate
 description: "Portfolio of cybersecurity work samples for a junior-level cyber security professional."
 keywords: "cybersecurity, cyber, security, portfolio, tech"
 skills: "Cybersecurity - Analyst - Ethical Hacker"
@@ -42,7 +42,7 @@ social:
   - title: linkedin
     url: https://www.linkedin.com/in/#######
   - title: github
-    url: https://github.com/outofluckspeedrun-r
+    url: https://github.com/zlahxhalz
 
 # Email Address (make sure to include "mailto:" before your email!)
 email:
