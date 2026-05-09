@@ -38,7 +38,7 @@
         <div id="output" class="flex-1 overflow-y-auto p-4 space-y-1 text-sm leading-6"></div>
         <form id="cmdForm" class="border-t border-sky-900/70 bg-[#012456] p-3 flex items-center gap-2">
           <span id="promptPath" class="text-cyan-200 shrink-0"></span>
-          <input id="cmdInput" type="text" autocomplete="off" spellcheck="false" aria-label="PowerShell command input" class="flex-1 bg-transparent outline-none text-slate-100 placeholder:text-slate-300" placeholder="Type a command like dir, cd docs, or open poc-vulnerability-report.pdf" />
+          <input id="cmdInput" type="text" autocomplete="off" spellcheck="false" aria-label="PowerShell command input" class="flex-1 bg-transparent outline-none text-slate-100 placeholder:text-slate-300" placeholder="Type a command like dir, cd docs, or open poc_vulnerability_report.pdf" />
           <button type="submit" class="px-3 py-1.5 rounded-lg bg-cyan-400 text-slate-950 font-semibold hover:bg-cyan-300 transition-all duration-300 text-xs sm:text-sm">Run</button>
         </form>
       </div>
@@ -50,7 +50,7 @@
       "use strict";
 
       const SITE_CONFIG = {
-        name: "you",
+        name: "spruce",
         role: "Cybersecurity Enthusiast",
         githubUrl: "https://github.com/zlahxhalz",
         reportUrl: "./assets/poc_vulnerability_report.pdf"
@@ -407,7 +407,7 @@ clear                Clear console`
         }
         const needle = args.join(" ").toLowerCase();
         if (needle.includes("report") || needle.includes("poc")) {
-          printLine("C:\\docs\\poc-vulnerability-report.pdf", "success");
+          printLine("C:\\docs\\poc_vulnerability_report.pdf", "success");
           return;
         }
         const matches = [];
