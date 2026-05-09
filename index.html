@@ -82,7 +82,6 @@ where <term>         Search for item paths
 tree                 Display folder tree
 history              Show command history
 export               Save command history to CSV
-nextstep             Ask AI for your next setup step
 clear                Clear console`
           },
           "docs": {
@@ -669,7 +668,7 @@ clear                Clear console`
       };
 
       const printBanner = () => {
-        printLine("PowerShell 7.4.2", "success");
+        printLine("PowerShell", "success");
         printLine(`Welcome to ${SITE_CONFIG.name}'s terminal`, "info");
         printLine("Type 'help' to list commands.", "muted");
         printLine(" ", "muted");
