@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>J Shalz | Portfolio</title>
+  <meta name="description" content="WELCOME" />
+  <style>
+    :root {
+      --bg: #050505;
+      --card: #101010;
+      --text: #f7f2df;
+      --muted: #c8b878;
+      --accent: #d4af37;
+      --border: #3a2f12;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #000000 0%, #080808 60%, #120f06 100%);
+      color: var(--text); line-height: 1.6;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 56px; }
+    .hero h1 { margin: 0 0 8px; font-size: 2rem; }
+    .hero p { margin: 0; color: var(--muted); }
+    .grid { display: grid; gap: 16px; margin-top: 24px; }
+    @media (min-width: 760px){ .grid { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.05rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { margin-top: 24px; color: var(--muted); font-size: 0.9rem; }
+    .btn {
+      display: inline-block; margin-top: 6px; padding: 8px 12px;
+      border: 1px solid var(--accent); border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>J Shalz</h1>
+      <p>Cybersecurity Enthusiast.</p>
+    </section>
+
+    <!-- For another time
+    <section class="grid">
+      <article class="card">
+        <h2>Resume</h2>
+        <p>Please send me an email to receive a copy of my resume!</p>
+        <a class="btn" href="/assets/resume.pdf" target="_blank" rel="noopener">Open Resume</a>
+      </article>
+    -->
+    
+      <article class="card">
+        <h2>PoC Vulnerability Report</h2>
+        <p>Proof-of-concept report with findings, impact, and remediation.</p>
+        <a class="btn" href="/reports/poc_vulnerability_report.pdf" target="_blank" rel="noopener">Open Report</a>
+      </article>
+
+      <article class="card">
+        <h2>About</h2>
+        <p>Cosmic-ray bit flipper</p>
+      </article>
+
+      <article class="card">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:1752left@gmail.com">1752left@.com</a><br />
+           GitHub: <a href="https://github.com/zlahxhalz" target="_blank" rel="noopener">@zlahxhalz</a></p>
+      </article>
+    </section>
+
+    <p class="footer">© <span id="y"></span>Shalz</p>
+  </main>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+        
