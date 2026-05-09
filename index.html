@@ -29,7 +29,7 @@
       <div class="px-4 py-2 bg-slate-900 text-slate-100 border-b border-slate-700 flex items-center justify-between">
         <div class="flex items-center gap-2 text-xs sm:text-sm">
           <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-          <span>PowerShell 7 Portfolio Terminal</span>
+          <span>PowerShell 7</span>
         </div>
         <button id="themeToggle" class="px-3 py-1.5 rounded-lg border border-slate-600 hover:bg-slate-800 transition-all duration-300 text-xs sm:text-sm">Theme</button>
       </div>
@@ -353,16 +353,24 @@ clear                Clear console`
 
       const cmdOpen = (args) => {
         if (!args.length) {
-          printLine("Usage: open <file|report|resume|github>", "warning");
+          printLine("Usage: open <report|poc|poc_vulnerability_report.pdf>", "warning");
           return;
         }
         const raw = args.join(" ").trim();
         const key = raw.toLowerCase();
 
-        if (key === "report" || key === "poc") {
+        if ([
+          "report",
+          "poc",
+          "poc_vulnerability_report.pdf",
+          "poc-vulnerability-report.pdf",
+          "docs/poc_vulnerability_report.pdf",
+          "docs\\poc_vulnerability_report.pdf"
+        ].includes(key)) {
           safeOpen(SITE_CONFIG.reportUrl);
           return;
         }
+        /*  later, gator
         if (key === "resume") {
           safeOpen(SITE_CONFIG.resumeUrl);
           return;
@@ -371,7 +379,7 @@ clear                Clear console`
           safeOpen(SITE_CONFIG.githubUrl);
           return;
         }
-
+      */
         const targetPath = resolvePath(raw);
         const node = getNodeByPath(targetPath);
         if (!node) {
