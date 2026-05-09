@@ -247,8 +247,8 @@ clear                Clear console`
           return;
         }
         const win = window.open(url, "_blank", "noopener,noreferrer");
-        if (!win) {
-          printLine("Popup was blocked. Allow popups and run the command again.", "error");
+        if (win === null) {
+          printLine("Open command sent. If no tab appeared, allow popups and run again.", "warning");
           return;
         }
         printLine(`Opened ${url}`, "success");
@@ -670,7 +670,7 @@ clear                Clear console`
 
       const printBanner = () => {
         printLine("PowerShell 7.4.2", "success");
-        printLine(`Portfolio terminal initialized for ${SITE_CONFIG.name}`, "info");
+        printLine(`Welcome to ${SITE_CONFIG.name}'s terminal`, "info");
         printLine("Type 'help' to list commands.", "muted");
         printLine(" ", "muted");
       };
