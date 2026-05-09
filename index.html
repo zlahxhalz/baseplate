@@ -269,10 +269,10 @@ clear                Clear console`
         printLine("pwd                  Show current path", "muted");
         printLine("cat | type <file>    Read a text file or show target URL", "muted");
         printLine("open <file|alias>    Open resume/report/github in a new tab", "muted");
-        printLine("where <term>         Search for matching names", "muted");
+        // printLine("where <term>         Search for matching names", "muted");
         printLine("tree [path]          Print folder tree", "muted");
         printLine("history              Show command history", "muted");
-        printLine("export               Save command history to CSV", "muted");
+        // printLine("export               Save command history to CSV", "muted");
         printLine("whoami               Show profile summary", "muted");
         printLine("clear | cls          Clear terminal output", "muted");
       };
@@ -406,27 +406,6 @@ clear                Clear console`
         });
       };
 
-      const cmdWhere = (args) => {
-        if (!args.length) {
-          printLine("Usage: where <term>", "warning");
-          return;
-        }
-        const needle = args.join(" ").toLowerCase();
-        if (needle.includes("report") || needle.includes("poc")) {
-          printLine("C:\\docs\\poc_vulnerability_report.pdf", "success");
-          return;
-        }
-        const matches = [];
-        recursiveSearch(state.fs, [], needle, matches);
-        if (!matches.length) {
-          printLine("No matching paths found.", "error");
-          return;
-        }
-        matches.forEach((pathArr) => {
-          printLine(pathForDisplay(pathArr), "info");
-        });
-      };
-
       const buildTreeLines = (node, prefix, lines) => {
         if (!node || node.type !== "dir") return;
         const entries = sortedEntries(node);
@@ -535,10 +514,10 @@ clear                Clear console`
           return;
         }
 
-        if (command === "where") {
-          cmdWhere(args);
-          return;
-        }
+      //  if (command === "where") {
+      //    cmdWhere(args);
+      //    return;
+      //  }
 
         if (command === "tree") {
           cmdTree(args);
@@ -550,15 +529,15 @@ clear                Clear console`
           return;
         }
 
-        if (command === "export") {
-          await cmdExport();
-          return;
-        }
+        // if (command === "export") {
+        //  await cmdExport();
+        //  return;
+        // }
 
-        if (command === "nextstep") {
-          await cmdNextStep(args);
-          return;
-        }
+        // if (command === "nextstep") {
+        //  await cmdNextStep(args);
+        //  return;
+        // }
 
         if (command === "whoami") {
           printLine(`${SITE_CONFIG.name} | ${SITE_CONFIG.role}`, "info");
