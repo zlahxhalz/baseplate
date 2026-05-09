@@ -494,20 +494,6 @@ clear                Clear console`
         }
       };
 
-          const stepTitle = typeof response?.step_title === "string" ? response.step_title.trim() : "";
-          const action = typeof response?.action === "string" ? response.action.trim() : "";
-          const filePath = typeof response?.file_path === "string" ? response.file_path.trim() : "";
-          const verify = typeof response?.verify === "string" ? response.verify.trim() : "";
-          if (!stepTitle || !action || !filePath || !verify) throw new Error("Incomplete AI output.");
-          printLine(`Step: ${stepTitle}`, "info");
-          printLine(`Action: ${action}`, "muted");
-          printLine(`Path: ${filePath}`, "muted");
-          printLine(`Verify: ${verify}`, "muted");
-        } catch (error) {
-          printLine(`AI request failed: ${error.message || "Unknown error"}`, "error");
-        }
-      };
-
       const executeCommand = async (raw) => {
         const tokens = tokenize(raw);
         if (!tokens.length) return;
