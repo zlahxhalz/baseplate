@@ -273,7 +273,6 @@ clear                Clear console`
         printLine("tree [path]          Print folder tree", "muted");
         printLine("history              Show command history", "muted");
         printLine("export               Save command history to CSV", "muted");
-        printLine("nextstep [context]   Use AI to generate one exact next setup step", "muted");
         printLine("whoami               Show profile summary", "muted");
         printLine("clear | cls          Clear terminal output", "muted");
       };
@@ -495,39 +494,6 @@ clear                Clear console`
         }
       };
 
-      const cmdNextStep = async (args) => {
-        if (typeof window.call_llm !== "function") {
-          printLine("AI function is unavailable in this environment.", "error");
-          return;
-        }
-        const now = Date.now();
-        if (now - state.aiLastCallMs < 5000) {
-          printLine("Please wait a few seconds before calling AI again.", "warning");
-          return;
-        }
-        const userContext = args.join(" ").trim();
-        const fallbackContext = `Current path: ${pathForDisplay(state.cwd)}. Recent commands: ${state.history.slice(-5).join(" | ") || "none"}. Goal: publish a resume and a PoC report portfolio site.`;
-        printLine("AI is generating one next action...", "muted");
-        try {
-          state.aiLastCallMs = now;
-          const response = await Promise.resolve(
-            window.call_llm(
-              "You are a concise portfolio deployment assistant. Return strict JSON fields only.",
-              [
-                {
-                  role: "user",
-                  message: userContext || fallbackContext,
-                  content: userContext || fallbackContext
-                }
-              ],
-              [
-                { step_title: "One short step title" },
-                { action: "Concrete action in 1-2 sentences" },
-                { file_path: "Single path to edit or settings path" },
-                { verify: "One quick verification sentence" }
-              ]
-            )
-          );
           const stepTitle = typeof response?.step_title === "string" ? response.step_title.trim() : "";
           const action = typeof response?.action === "string" ? response.action.trim() : "";
           const filePath = typeof response?.file_path === "string" ? response.file_path.trim() : "";
