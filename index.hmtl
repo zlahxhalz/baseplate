@@ -5,10 +5,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PowerShell Portfolio | Your Name</title>
-  <meta name="description" content="A simple PowerShell-style portfolio terminal where visitors can navigate with commands and open your PoC vulnerability report." />
-  <meta property="og:title" content="PowerShell Portfolio | Your Name" />
-  <meta property="og:description" content="Use terminal commands like dir, ls, and cd to explore resume and PoC report links." />
+  <title>Portfolio | Shalz</title>
+  <meta name="description" content="WELCOME" />
+  <meta property="og:title" content="PS Portfolio | Shalz" />
+  <meta property="og:description" content=" " />
   <meta property="og:image" content="https://cdn.simulationtheory.ai/gasset/?asset=img&prompt=minimal%20powershell%20portfolio%20terminal%20interface&w=1200&h=630&style=professional" />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="https://cdn.simulationtheory.ai/gasset/?asset=img&prompt=minimal%20terminal%20favicon%20icon&w=64&h=64&style=professional" />
@@ -50,11 +50,10 @@
       "use strict";
 
       const SITE_CONFIG = {
-        name: "Your Name",
-        role: "Security Researcher | AppSec",
-        githubUrl: "https://github.com/your-username",
-        resumeUrl: "/assets/resume.pdf",
-        reportUrl: "/assets/poc-vulnerability-report.pdf"
+        name: "you",
+        role: "Cybersecurity Enthusiast",
+        githubUrl: "https://github.com/zlahxhalz",
+        reportUrl: "./assets/poc_vulnerability_report.pdf"
       };
 
       const createFileSystem = () => ({
@@ -65,7 +64,7 @@
             kind: "text",
             content: `Name: ${SITE_CONFIG.name}
 Role: ${SITE_CONFIG.role}
-Focus: Vulnerability research, secure architecture, and practical PoC reporting.
+Focus: Cybersecurity.
 Tip: Use 'cd docs' then 'dir' to find key files.`
           },
           "readme.txt": {
@@ -94,7 +93,7 @@ clear                Clear console`
                 kind: "asset",
                 assetKey: "resume"
               },
-              "poc-vulnerability-report.pdf": {
+              "poc_vulnerability_report.pdf": {
                 type: "file",
                 kind: "asset",
                 assetKey: "report"
@@ -112,7 +111,7 @@ clear                Clear console`
               "contact.txt": {
                 type: "file",
                 kind: "text",
-                content: "Add your preferred contact details here."
+                content: "1752left@gmail.com"
               }
             }
           }
@@ -665,7 +664,7 @@ clear                Clear console`
         printLine("PowerShell 7.4.2", "success");
         printLine(`Portfolio terminal initialized for ${SITE_CONFIG.name}`, "info");
         printLine("Type 'help' to list commands.", "muted");
-        printLine("Quick route to PoC: cd docs  ->  dir  ->  open poc-vulnerability-report.pdf", "muted");
+        printLine(" ", "muted");
       };
 
       const init = () => {
