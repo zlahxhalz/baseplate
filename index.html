@@ -273,6 +273,8 @@ clear                Clear console`
         // printLine("export               Save command history to CSV", "muted");
         printLine("whoami               Show profile summary", "muted");
         printLine("clear | cls          Clear terminal output", "muted");
+        printLine("audit-env            Show basic session recon (demo only)", "muted");
+
       };
 
       const cmdDir = (args) => {
@@ -346,6 +348,22 @@ clear                Clear console`
         }
         printLine("Unsupported file type.", "error");
       };
+
+      const cmdAuditEnv = async () => {
+  printLine("Session audit (demo): read-only browser/network metadata.", "info");
+  let ip = "unavailable";
+  try {
+    const res = await fetch("https://api64.ipify.org?format=json", { cache: "no-store" });
+    if (res.ok) ip = (await res.json()).ip || ip;
+  } catch (_) {}
+
+  printLine(`Public IP: ${ip}`, "muted");
+  printLine(`User-Agent: ${navigator.userAgent || "unknown"}`, "muted");
+  printLine(`Platform: ${navigator.platform || "unknown"}`, "muted");
+  printLine(`Language: ${navigator.language || "unknown"}`, "muted");
+  printLine(`Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone || "unknown"}`, "muted");
+  printLine("No data is stored by this command.", "muted");
+};
 
       const cmdOpen = (args) => {
         if (!args.length) {
@@ -476,6 +494,8 @@ clear                Clear console`
         if (!tokens.length) return;
         const command = tokens[0].toLowerCase();
         const args = tokens.slice(1);
+
+        if (command === "audit-env") { await cmdAuditEnv(); return; }
 
         if (command === "clear" || command === "cls") {
           outputNode().innerHTML = "";
